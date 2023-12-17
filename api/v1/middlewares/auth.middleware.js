@@ -15,7 +15,7 @@ module.exports.requireAuth = async (req, res, next) => {
         message: "Không có quyền truy cập!"
       });
     } else {
-      req.user = user;
+      res.locals.user = user;
       next();
     }
   } else {
